@@ -1,0 +1,15 @@
+name: 04-using-actions
+on: push
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        steps:
+        - name: Checkout code
+          uses: actions/checkout@v4
+        - name: Printing folders
+          run: ls
+        # checkout the code from the repository
+        # Install the dependencies for our react application
+        # command used - npx create-react-app --template typescript react-app
+        #2. Execute automated tests
