@@ -4,6 +4,9 @@ on: push
 jobs:
     build:
         runs-on: ubuntu-latest
+        defaults:
+            run:
+                working-directory: 04-using-actions/react-app
         steps:
         - name: Checkout code
           uses: actions/checkout@v4
@@ -13,7 +16,8 @@ jobs:
             node-version: '20.x'
         - name: Install dependencies
           run: npm install
-          working-directory: 04-using-actions/react-app
+        - name: Run Unit tests
+          run: npm run test 
         # checkout the code from the repository
         # Install the dependencies for our react application
         # command used - npx create-react-app --template typescript react-app
